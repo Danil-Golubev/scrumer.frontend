@@ -1,0 +1,105 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50px;
+  width: 600px;
+  height: 600px;
+  background-color: var(--block-color);
+  gap: 50px;
+}
+
+.blockContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 70%;
+}
+
+.inputsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.titleHello {
+  font-size: 26px;
+  color: var(--primary-color);
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  color: var(--text-color-2);
+}
+
+.error {
+  color: var(--error-color-1);
+  font-size: 16px;
+}
+
+.inputBlock {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.semiBlock {
+  cursor: pointer;
+  display: flex;
+  border-radius: 50px;
+  height: 160px;
+  width: 100%;
+  background-color: var(--secondary-color-3);
+  transition: transform 0.17s ease, box-shadow 0.17s ease;
+}
+
+.textBlock {
+  color: var(--primary-color);
+  font-size: 24px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.divider {
+  height: 100%;
+  width: 2px;
+  background-color: var(--secondary-color-2);
+}
+
+.logoBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.logoSvg {
+  height: 70%;
+}
+
+.semiBlock:hover {
+  transform: translateY(-2px);
+  /* более светлая тень, например, синеватая */
+  box-shadow: 0 4px 10px var(--primary-color);
+}
+
+/* при нажатии */
+.semiBlock:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px var(--primary-color);
+}
