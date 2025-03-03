@@ -38,9 +38,7 @@ export const Registration = () => {
   return (
     <div className={styles.content}>
       <div className={styles.block}>
-        <p className={styles.title}>
-          <span style={{ color: "var(--primary-color)" }}>Регистрация</span>
-        </p>
+        <p className={styles.title}>Регистрация</p>
 
         <form className={styles.inputsBlock} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.inputBlock}>

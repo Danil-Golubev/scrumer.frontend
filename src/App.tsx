@@ -12,6 +12,7 @@ import { PublicRoute } from "./components/PublicRoute";
 import { SkeletonBlock } from "./pages/SkeletonBlock/SkeletonBlock";
 import { TeamCreating } from "./pages/TeamCreating/TeamCreating";
 import { Join } from "./pages/Join/Join";
+import { TaskCreate } from "./pages/TaskCreate/TaskCreate";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -46,6 +47,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <CreateOrJoin />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/createtask"
+            element={
+              <ProtectedRoute>
+                <TaskCreate />
               </ProtectedRoute>
             }
           />

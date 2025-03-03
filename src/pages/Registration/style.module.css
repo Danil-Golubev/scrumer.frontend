@@ -24,14 +24,9 @@
   gap: 15px;
 }
 
-.titleHello {
-  font-size: 26px;
-  color: var(--primary-color);
-}
-
 .title {
   font-size: 26px;
-  color: var(--text-color-2);
+  color: var(--primary-color);
 }
 
 .error {

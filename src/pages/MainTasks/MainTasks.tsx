@@ -5,6 +5,8 @@ import { selectUser } from "../../redux/auth";
 import { Navigate } from "react-router-dom";
 import { SkeletonBlock } from "../SkeletonBlock/SkeletonBlock";
 import { useEffect } from "react";
+import { Header } from "../../components/Header/Header";
+import { motion } from "framer-motion";
 export const MainTasks = () => {
   const user = useSelector(selectUser);
   // if (!user) {
@@ -13,21 +15,33 @@ export const MainTasks = () => {
 
   useEffect(() => {}, []);
 
+  if (!user) {
+    return <SkeletonBlock />;
+  }
+
   if (!user.team) {
     return <Navigate to="/createorjoin" />;
   }
   return (
     <>
-      <div className={styles.columns}>
-        <Column title="Открыта" />
-        <Column title="В процессе" />
-        <Column title="Закрыто" />
-        <Column title="Отложена" />
-      </div>
-      <div className={styles.backlogMainBlock}>
-        <p>Бэклог</p>
-        <div className={styles.backlogBlock}></div>
-      </div>
+      <Header />
+      <motion.div
+        className={styles.content}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <div className={styles.columns}>
+          <Column title="Открыта" />
+          <Column title="В процессе" />
+          <Column title="Закрыто" />
+          <Column title="Отложена" />
+        </div>
+        <div className={styles.backlogMainBlock}>
+          <p>Бэклог</p>
+          <div className={styles.backlogBlock}></div>
+        </div>
+      </motion.div>
     </>
   );
 };

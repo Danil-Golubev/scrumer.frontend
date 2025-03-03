@@ -52,7 +52,7 @@
 
 .buttonMonth {
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 90px;
   border-radius: 50px;
   background-color: var(--secondary-color-3);
@@ -67,5 +67,13 @@
 }
 
 .buttonMonthNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
+}
+
+.customInput {
+  align-items: center;
+  width: 100%;
 }

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchLogin, selectIsAuth } from "../../redux/auth";
 import { LoginParams, User } from "../../types";
 import { useAppDispatch } from "../../redux/store";
+import { motion } from "framer-motion";
 export const Login = () => {
   const {
     register,
@@ -36,7 +37,12 @@ export const Login = () => {
 
   return (
     <div className={styles.content}>
-      <div className={styles.block}>
+      <motion.div
+        className={styles.block}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
         <p className={styles.title}>
           <span style={{ color: "var(--primary-color)" }}>Привет</span>, войди
           или <br />
@@ -72,7 +78,7 @@ export const Login = () => {
         <Link className={styles.linkText} to="/register">
           У меня нет аккаунта
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

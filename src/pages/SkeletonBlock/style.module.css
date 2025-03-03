@@ -48,15 +48,12 @@
 }
 
 /* Если нужно, чтобы сам контент имел эффект затемнения */
-.skeleton {
-  opacity: 0.5;
-}
 
-/* HTML: <div class="loader"></div> */
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 45px;
   height: 30px;
+
   background: linear-gradient(var(--primary-color) 0 0) 0 100%/100% 50%,
     linear-gradient(var(--primary-color) 0 0) 0 0 / calc(100% / 3) 100%;
   background-repeat: no-repeat;
@@ -69,7 +66,8 @@
   content: "";
   position: absolute;
   inset: -50% 0 50%;
-  background: var(--primary-color) 0 0 / calc(2 * 100% / 3) 50%,
+  background: linear-gradient(var(--primary-color) 0 0) 0 0 / calc(2 * 100% / 3)
+      50%,
     linear-gradient(var(--primary-color) 0 0) 100% 100% / calc(2 * 100% / 3) 50%;
   background-repeat: no-repeat;
   animation: inherit;

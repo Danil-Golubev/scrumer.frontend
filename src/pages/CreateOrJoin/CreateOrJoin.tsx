@@ -1,14 +1,18 @@
 import { useSelector } from "react-redux";
 import styles from "./style.module.css";
-import { selectIsAuth, selectUser } from "../../redux/auth";
+import { selectUser } from "../../redux/auth";
 import { SkeletonBlock } from "../SkeletonBlock/SkeletonBlock";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 export const CreateOrJoin = () => {
   const user = useSelector(selectUser);
 
   if (!user) {
     return <SkeletonBlock />;
+  }
+
+  if (user.team) {
+    return <Navigate to="/" />;
   }
 
   return (
