@@ -5,22 +5,27 @@
   font-size: 20px;
   color: var(--primary-color);
   text-align: center;
-
-  justify-content: center;
-
+  justify-content: start;
   display: flex;
   flex-direction: column;
+
   gap: 20px;
 }
 .columnBlock {
-  min-width: 300px;
-  height: 65vh;
+  padding: 10px;
+  width: 300px;
+  min-height: 65vh;
+
   background-color: black;
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
 }
 
 .columns {
-  height: 100%;
+  min-height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -36,7 +41,6 @@
   font-size: 20px;
   text-align: center;
   align-items: center;
-
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -46,4 +50,81 @@
   width: 100%;
   height: 300px;
   background-color: var(--block-color);
+}
+
+.empty {
+  color: var(--secondary-color-2);
+}
+
+.taskBlock {
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box;
+  cursor: grab;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  width: 100%;
+  height: 110px;
+  background-color: var(--secondary-color-3);
+  cursor: pointer;
+}
+.taskBlock:hover {
+  transition: 0.25s;
+  box-shadow: 0 4px 10px var(--primary-color);
+}
+
+.performer {
+  gap: 10px;
+  align-items: center;
+  display: flex;
+}
+
+.performerName {
+  text-align: start;
+  width: 90px;
+  color: var(--text-color-1);
+}
+
+.taskContent {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  height: 80%;
+}
+
+.avatar {
+  height: 26px;
+  min-width: 26px;
+  border-radius: 100%;
+  background-color: #aceb00;
+}
+
+.deadline {
+  text-align: end;
+  width: 80px;
+}
+
+.taskTitle {
+  color: var(--text-color-1);
+}
+
+/* Заморозка положения неперетаскиваемых элементов */
+.notBeingDragged {
+  transition: none !important;
+  /* Фиксирует положение элементов во время перетаскивания */
+  transform: translate(0, 0) !important;
+}
+
+/* Стиль для колонки, над которой происходит перетаскивание - осветление фона */
+.isDraggingOver .columnBlock {
+  /* Слегка осветляем фон вместо зеленой полоски */
+  background-color: var(
+    --secondary-color-2
+  ) !important; /* Немного светлее черного */
+  transition: background-color 0.2s ease;
 }

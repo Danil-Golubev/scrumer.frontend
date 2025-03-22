@@ -22,13 +22,15 @@ export const Header = () => {
             />
           </div>
         </Link>
-        <div className={styles.buttonBlock}>
-          <img
-            className={styles.icon}
-            alt="options"
-            src="/images/Header/Laptop.svg"
-          />
-        </div>
+        <Link to="/aihelper">
+          <div className={styles.buttonBlock}>
+            <img
+              className={styles.icon}
+              alt="options"
+              src="/images/Header/Laptop.svg"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );

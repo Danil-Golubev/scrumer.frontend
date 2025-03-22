@@ -4,7 +4,7 @@ import { MainTasks } from "./pages/MainTasks/MainTasks";
 import { Login } from "./pages/Login/Login";
 import { Registration } from "./pages/Registration/Registration";
 import { CreateOrJoin } from "./pages/CreateOrJoin/CreateOrJoin";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useAppDispatch } from "./redux/store";
 import { fetchAuthMe } from "./redux/auth";
 import { ProtectedRoute } from "./components/ProtectedRoute";
@@ -13,13 +13,15 @@ import { SkeletonBlock } from "./pages/SkeletonBlock/SkeletonBlock";
 import { TeamCreating } from "./pages/TeamCreating/TeamCreating";
 import { Join } from "./pages/Join/Join";
 import { TaskCreate } from "./pages/TaskCreate/TaskCreate";
+import { AiHelper } from "./pages/AiHelper/AiHelper";
 
 function App() {
   const dispatch = useAppDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(fetchAuthMe());
-  }, [dispatch]);
+  }, [dispatch, location.pathname]);
 
   return (
     <div className="App">
@@ -63,6 +65,15 @@ function App() {
             element={
               <ProtectedRoute>
                 <Join />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/aihelper"
+            element={
+              <ProtectedRoute>
+                <AiHelper />
               </ProtectedRoute>
             }
           />

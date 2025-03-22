@@ -99,3 +99,19 @@ button:disabled {
 Link {
   text-decoration: none;
 }
+
+select {
+  width: 180px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color-2);
+  border: none;
+}
+
+select:focus {
+  border: none;
+}
+select:active {
+  border: none;
+}

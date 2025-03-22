@@ -1,10 +1,17 @@
+import { JSX } from "react";
+
 export type User = {
-  name: string; //TODO: доделать
+  _id?: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  tgId: string;
   team: Team;
 };
 
 export type Employee = {
-  user: string;
+  _id?: string;
+  user: User;
   position: string;
 };
 
@@ -14,15 +21,19 @@ export type Team = {
   deadline: string;
   sprintDuration: string;
   members?: Employee[];
-  tasks?: Task[];
+  tasks?: TaskType[];
 };
 
-export type Task = {
-  title: String;
-  description: String;
+export type TaskType = {
+  _id?: string;
+  lastName?: any;
+  firstName?: any;
+  team?: string;
+  title: string;
+  status: string;
+  description: string;
   deadline: Date;
-  teamId: string;
-  assignedTo: String;
+  performer: Employee;
 };
 
 export interface LoginParams {
