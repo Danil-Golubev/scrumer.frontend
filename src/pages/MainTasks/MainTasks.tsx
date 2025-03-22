@@ -16,7 +16,7 @@ import {
   DroppableProvided,
   DraggableProvided,
   DropResult,
-} from "react-beautiful-dnd";
+} from "@hello-pangea/dnd";
 import { fetchTaskStatusChange } from "../../redux/api";
 import { TaskModal } from "../../components/TaskModal/TaskModal";
 import { useAppDispatch } from "../../redux/store";
