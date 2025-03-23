@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { Employee, TaskType } from "../../types";
-import { fetchCreateTask } from "../../redux/task";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useAppDispatch } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth";
 import { motion } from "framer-motion";
@@ -28,13 +26,7 @@ export type SubmitHandlerType = {
 export const TaskModal = ({ isOpen, onClose, task }: props) => {
   const formattedDate = String(task.deadline).split("T")[0];
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-    setValue,
-    watch,
-  } = useForm({
+  const { register, handleSubmit, setValue, watch } = useForm({
     defaultValues: {
       team: task.team,
       title: task.title,
@@ -46,9 +38,9 @@ export const TaskModal = ({ isOpen, onClose, task }: props) => {
     mode: "onChange",
   });
 
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
-  const [isCreated, setIsCreated] = useState(false);
+  // const [isCreated, setIsCreated] = useState(false);
 
   const [initialValues, setInitialValues] = useState<SubmitHandlerType>({
     team: task.team,
@@ -112,9 +104,9 @@ export const TaskModal = ({ isOpen, onClose, task }: props) => {
     console.log("taskData:", taskData);
     // const task = await dispatch(fetchCreateTask(taskData as TaskType));
 
-    if (task) {
-      setIsCreated(true);
-    }
+    // if (task) {
+    //   setIsCreated(true);
+    // }
   };
 
   const [isVisible, setIsVisible] = useState(isOpen);

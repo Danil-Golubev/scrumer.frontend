@@ -9,11 +9,7 @@ import { selectUser } from "../../redux/auth";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 export const TeamCreating = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       title: "",
       description: "",
@@ -31,7 +27,6 @@ export const TeamCreating = () => {
       setFlag(true);
     }
   };
-
   if (user.team || flag) {
     return <Navigate to="/" />;
   }

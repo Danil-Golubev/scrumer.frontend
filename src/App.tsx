@@ -9,7 +9,6 @@ import { useAppDispatch } from "./redux/store";
 import { fetchAuthMe } from "./redux/auth";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { PublicRoute } from "./components/PublicRoute";
-import { SkeletonBlock } from "./pages/SkeletonBlock/SkeletonBlock";
 import { TeamCreating } from "./pages/TeamCreating/TeamCreating";
 import { Join } from "./pages/Join/Join";
 import { TaskCreate } from "./pages/TaskCreate/TaskCreate";

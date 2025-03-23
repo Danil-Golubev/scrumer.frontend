@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth";
 import { SkeletonBlock } from "../SkeletonBlock/SkeletonBlock";
-import { Employee, TaskType, User } from "../../types";
+import { Employee, TaskType } from "../../types";
 import { fetchCreateTask } from "../../redux/task";
 import { useForm } from "react-hook-form";
 import { useAppDispatch } from "../../redux/store";
@@ -20,11 +20,7 @@ type props = {
   deadline: Date;
 };
 export const TaskCreate = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       team: "",
       title: "",

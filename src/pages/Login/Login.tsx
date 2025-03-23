@@ -1,16 +1,16 @@
 import { Link, Navigate } from "react-router-dom";
 import styles from "./style.module.css";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { fetchLogin, selectIsAuth } from "../../redux/auth";
-import { LoginParams, User } from "../../types";
+import { LoginParams } from "../../types";
 import { useAppDispatch } from "../../redux/store";
 import { motion } from "framer-motion";
 export const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm({
     defaultValues: {
       email: "",

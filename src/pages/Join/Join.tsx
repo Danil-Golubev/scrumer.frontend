@@ -2,19 +2,16 @@ import { useForm } from "react-hook-form";
 import styles from "./style.module.css";
 import { motion } from "framer-motion";
 export const Join = () => {
-  const {
-    register,
-    formState: { errors, isValid },
-  } = useForm({
+  const { register } = useForm({
     defaultValues: {
       email: "",
       password: "",
     },
     mode: "onChange",
   });
-  const handleSubmit = () => {
-    console.log(123);
-  };
+  // const handleSubmit = () => {
+  //   console.log(123);
+  // };
   return (
     <motion.div
       className={styles.content}
